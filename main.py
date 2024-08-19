@@ -55,7 +55,7 @@ def add_event():
     add_ev=input()
 
     y=add_ev + ","+ yy + "," + mm + "," + dd
-
+2
     f.writelines(y + "\n")
 
     f.close()
@@ -66,29 +66,39 @@ def display_ev():
     year=input("Enter year:")
     month=input("Enter month:")
     day=input("Enter day:")
+    index=1
+    dic={}
     f = open("events.txt", "r")
     for i in f:
         lst=i.split(",")
         lst[3]=lst[3].replace("\n","")
         if (lst[1]== year and lst[2]==month and lst[3]==day):
-            print(f.read())
-            
+            dic[index]=lst
+            print(dic)
+            print(index,lst)
+            index+=1
+           
 # Delete/Edit Event
 
 def del_edit():
     year=input("Enter year:")
     month=input("Enter month:")
     day=input("Enter day:")
-
+    index=1
+    dic={}
     f = open("events.txt", "r")
     for i in f:
         lst=i.split(",")
         lst[3]=lst[3].replace("\n","")
         if (lst[1]== year and lst[2]==month and lst[3]==day):
-            print(f.read())
+            dic[index]=lst
+            print(dic)
+            print(index,lst)
+            index+=1
     select=int(input("Select: 1 for deleting an event\n Select:2 for editing an event"))
-   # match select:
-      # case 1:
+    match select:
+       case 1:
+       
 
 
 #choice
